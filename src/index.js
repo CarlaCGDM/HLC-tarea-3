@@ -5,6 +5,12 @@ const rutasV1 = require("./routes/v1/indexRoutes")
 app.use(express.json())
 app.use("/api/v1", rutasV1.router)
 
+const cors = require('cors');
+app.use(cors({
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
+
 
 app.use((err, req, res, next) => {
   console.log("Esta funcion captura todos los erroes de express")

@@ -29,21 +29,48 @@ const insertProduct = (producto) => {
 
 const deleteProduct = (nombre) => {
 
-    //copia de los datos sin el producto objetivo
-    const dataMinusTarget = datos.productos.filter(prod => prod.nombre !== nombre);
+    //ver si existe el producto
+    const oneProduct = getOneProduct(nombre);
 
-    //escribo el fichero con esos nuevos datos
+    //borrar el producto
+    if (!oneProduct) {
+        return false;
+    } else {
+        //borrar producto
+        delete datos.productos[nombre];
+    
+        //escribir de nuevo el json
+        fs.writeFileSync(
+        "./src/database/productos.json",
+        JSON.stringify(datos, null, 2),
+        "utf8"
+        );
+
+        return true;
+    }
+  };
+
+  const updateProduct = (prod, nuevosDatos) => {
+    //cambiamos los valores de los campos
+    datos.productos[prod].nombre = nuevosDatos.nombre;
+    datos.productos[prod].precio = nuevosDatos.precio;
+    datos.productos[prod].categoria = nuevosDatos.categoria;
+    datos.productos[prod].fechaModificacion = nuevosDatos.fechaModificacion;
+
+    //Escribo el fichero con esos nuevos datos
     fs.writeFileSync(
         "./src/database/productos.json",
-        JSON.stringify(dataMinusTarget, null, 2),
+        JSON.stringify(datos, null, 2),
         "utf8"
     );
 
-}
+    return nuevosDatos;
+  }
 
 module.exports = {
     getAllProducts,
     getOneProduct,
     insertProduct,
-    deleteProduct
+    deleteProduct,
+    updateProduct
 }

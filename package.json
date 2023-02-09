@@ -1,6 +1,9 @@
 {
   "name": "tarea-3-servidor-express-api-crud",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=16.17.1"
+  },
   "description": "tarea 3 de node y express para HLC",
   "main": "index.js",
   "scripts": {

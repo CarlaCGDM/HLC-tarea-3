@@ -30,12 +30,23 @@ const getOneProduct = (nombre) => {
   return oneProduct;
 };
 
-const updateOneProduct = () => {
-  //TODO: implementar funcionalidad para actualizar un producto
+const updateOneProduct = (antiguo,nuevosDatos) => {
+  const newProduct = {
+    ...nuevosDatos,
+    fechaModificacion: new Date().toLocaleDateString(),
+  }
+
+  //llama al modelo para realizar la inserción
+  const productoModificado = productosModelo.updateProduct(antiguo,newProduct);
+  if(!productoModificado) return false
+  return productoModificado
+
 };
 
-const deleteOneProduct = () => {
-  //TODO: implementar funcionalidad para eliminar un producto
+const deleteOneProduct = (nombre) => {
+  const deletedProduct = productosModelo.deleteProduct(nombre)
+  if(!deletedProduct) return false
+  return deletedProduct
 };
 
 module.exports = {

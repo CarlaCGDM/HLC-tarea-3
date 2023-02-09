@@ -1,0 +1,45 @@
+{
+  "productos": {
+    "cereales": {
+      "nombre": "Cereales",
+      "precio": 3.45
+    },
+    "colacao": {
+      "nombre": "Colacao",
+      "precio": 1.45
+    },
+    "aguamineral": {
+      "nombre": "Agua mineral",
+      "precio": 1
+    },
+    "prueba": {
+      "nombre": "prueba",
+      "precio": "2",
+      "fecha": "2023-01-22T22:12:48.091Z"
+    },
+    "monster": {
+      "nombre": "monster",
+      "precio": "3",
+      "categoria": "refresco con cafeina",
+      "id": "127868ed-5590-4ffc-803d-3b4656176c8b",
+      "fechaAlta": "2/2/2023",
+      "fechaModificacion": "2/2/2023"
+    },
+    "Coca-cola": {
+      "nombre": "Coca-cola",
+      "precio": 1.1,
+      "categoria": "refresco con cafeina",
+      "id": "32cd7595-7744-4ded-b491-c317e5ad86d7",
+      "fechaAlta": "9/2/2023",
+      "fechaModificacion": "9/2/2023"
+    },
+    "Coca-cola 2": {
+      "nombre": "Coca-cola 2",
+      "precio": 1.1,
+      "categoria": "refresco con cafeina",
+      "id": "ff7c3196-8dd2-4abf-bd7f-4b70c3e1e846",
+      "fechaAlta": "9/2/2023",
+      "fechaModificacion": "9/2/2023"
+    }
+  }
+}
